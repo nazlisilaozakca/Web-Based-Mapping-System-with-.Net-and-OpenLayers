@@ -1,0 +1,428 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    margin: 0;
+    padding: 0
+
+} 
+.map {
+  height: 1000px;
+  width: 100%;
+} 
+
+.topnav {
+  background-color:black;
+  overflow: hidden;
+  height:55px ;
+}
+#brand-textBtn{
+  margin-left:50px;
+  color:white;
+  text-decoration: double;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  font-weight: bolder;
+}
+#brand-textBtn:hover{
+  background-color:darkgray;
+  color:  #333;
+}
+
+
+#buttonEkle{
+    color:white;
+    text-decoration: double;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    font-family:  Arial, Helvetica, sans-serif;
+   background-color: black;
+   
+}
+#buttonListele{
+  color:white;
+  text-decoration: double;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-family:  Arial, Helvetica, sans-serif;
+ background-color:  black;
+}
+
+
+#buttonEkle:hover{
+    background-color:darkgray;
+    color:  #333;
+}
+#buttonListele:hover{
+  background-color:darkgray;
+  color:  #333;
+}
+
+
+ .feedBack{
+    color: white;
+    position: inherit;
+ }
+ #label{
+  margin-top: 20px;
+  font-size: large;
+  
+
+ }
+ #btnEkle{
+
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  }
+  #btnEkle:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  }
+  
+  #btnEkle:active {
+    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+  }
+  
+  
+ 
+/*JSPANEL CSS'LERİ*/
+#konumLabel{
+  width: 100px; 
+  height: 50px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  
+  
+}
+#xLabel{
+  width: 100px; 
+  height: 50px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+}
+#yLabel{
+  width: 100px; 
+  height: 50px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+}
+#NameText{
+  width: 200px; 
+  height: 25px; 
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+#xKonum{
+  width: 200px; 
+  height: 25px; 
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+#yKonum{
+  width: 200px; 
+  
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+
+#yazi{
+  width: 100px; 
+  height: 50px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+
+}
+#IdTextGuncelle{
+  width: 200px; 
+  height: 25px; 
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+#NameTextGuncel{
+  width: 200px; 
+  height: 25px; 
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+#xKonumGuncel{
+  width: 200px; 
+  height: 25px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+#yKonumGuncel{
+  width: 200px; 
+  height: 25px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+}
+  #IdTextGuncelleInteraction{
+    width: 200px; 
+  height: 25px; 
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 200px;
+  box-shadow: 0 0 0 2px black;
+    
+  }
+  #NameTextGuncelInteraction{
+    width: 200px; 
+    height: 25px; 
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 200px;
+    box-shadow: 0 0 0 2px black;
+  }
+  #xKonumGuncelInteraction{
+    width: 200px; 
+    height: 25px; 
+    color: darkred;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 200px;
+    box-shadow: 0 0 0 2px black;
+  }
+  #yKonumGuncelInteraction{
+    width: 200px; 
+    height: 25px; 
+    color: darkred;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 200px;
+    box-shadow: 0 0 0 2px black;
+  }
+
+#btnGuncelle{
+ 
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#btnGuncelle:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+#btnGuncelle:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+
+#interactionbtnGuncelle{
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#interactionbtnGuncelle:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+#nteractionbtnGuncelle:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+  
+
+#yaziSil{
+  width: 100px; 
+  height: 35px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  
+}
+#IdTextSil{
+  width: 100px; 
+  height: 30px; 
+  color: darkred;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  
+
+}
+#btnSil{
+  margin-left: 270px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(176, 11, 11) 0%, rgb(176, 11, 11) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #d1211598;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#btnSil:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #d1211598;
+}
+#btnSil:active {
+  box-shadow: 0 0.3em 1em -0.5em #d1211598;
+}
+
+#interactionbtnSil{
+  margin-left: 270px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(176, 11, 11) 0%, rgb(176, 11, 11) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #d1211598;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#interactionbtnSil:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #d1211598;
+}
+#interactionbtnSil:active {
+  box-shadow: 0 0.3em 1em -0.5em #d1211598;
+}
+
+#yaziListele{
+  width: 100px; 
+  height: 50px; 
+  color: darkred;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 300px;
+
+}
+#btnListele{
+  margin-left: 350px;
+  background-color:#4CAF50;
+  font-size:large;
+  width: 100px;
+  height: 35px; 
+}
+
+
+
+
+
+/*DATA TABLE CSS*/
+#datatable{
+  background-color:#d1ecb4;
+  color:#1b223e;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.btnEdit{
+  background-color: #ccdff8;
+  width: 30px;;
+  height: 30px;
+}
+#img{
+  margin-left:150px
+}
+#img2{
+  margin-left:250px
+}
+

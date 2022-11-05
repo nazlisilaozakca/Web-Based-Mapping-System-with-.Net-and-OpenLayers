@@ -1,0 +1,137 @@
+//haritayı getirme kodu
+
+window.onload = harita; //sayfa ilk açıldığında 
+
+var Map;
+
+var vectorSource = new ol.source.Vector();
+
+var vectorLayer = new ol.layer.Vector({ source: vectorSource });
+
+var coordinates;
+
+
+
+function ekleButon(){
+    var _name = document.getElementById("NameText").value; //name text değişkeninin değerini almaya çalışıyoruz. Böylece birden fazla isim eklenebilir.
+    //alert("eklendi");
+    const data={
+        x: coordinates[0],
+        y: coordinates[1],
+        name: _name
+    };
+
+    
+    fetch("https://localhost:7133/api/Location",{ //verinin gonderilecegi url
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json, text/plain',
+        'Content-Type': 'application/json;charset=UTF-8'
+    },
+        body: JSON.stringify(data),   //body ozelligine gonderilecek veri yazilir
+        
+    })
+    .then(response=>response.json()) //promise yapisi doner
+    .then(data=>{console.log('Success:',data);
+    })
+    .catch((error)=>{
+        console.error('Error:',error); //hata alirsak konsola yazdirarak hatayi gorebiliriz
+    })
+    
+}
+
+const panelOlustur = (coords) =>
+    jsPanel.create({
+        theme: 'dark',
+        headerLogo: '<i class="fad fa-home-heart ml-2"></i>',
+        headerTitle: 'I\'m a jsPanel',
+        headerToolbar: '<span class="text-sm">Just some text in optional header toolbar ...</span>',
+        footerToolbar: '<span class="flex flex-grow">You can have a footer toolbar too</span>' +
+            '<i class="fal fa-clock mr-2"></i><span class="clock">loading ...</span>',
+        panelSize: {
+            width: () => { return Math.min(800, window.innerWidth * 0.9); },
+            height: () => { return Math.min(500, window.innerHeight * 0.6); }
+        },
+        animateIn: 'jsPanelFadeIn',
+        
+        content: `
+        <label style=weight:100;height:50; id="konumLabel" value="Konum Adı:">Konum Adı</label>
+        </br>
+        <input type="text" id="NameText"/>
+        </br></br>
+        <label style=weight:100;height:50; id="xLabel" value="Konum Adı:">X Koordinatı</label>
+        </br>
+        <input type="text" id="xKonum" value=${coords[0]} readonly/>
+        </br></br>
+        <label style=weight:100;height:50; id="yLabel" value="Konum Adı:">Y Koordinatı</label>
+        </br>
+        <input type="text" id="yKonum" value=${coords[1]} readonly/>
+
+        </br><br/>
+       <button style=background-color:#4CAF50;font-size:16px; onclick="ekleButon()">Ekle</button>
+        `,
+       
+
+        onwindowresize: true,
+        callback: function (panel) {
+            function clock() {
+                let time = new Date(),
+                    hours = time.getHours(),
+                    minutes = time.getMinutes(),
+                    seconds = time.getSeconds();
+                panel.footer.querySelectorAll('.clock')[0].innerHTML = `${harold(hours)}:${harold(minutes)}:${harold(seconds)}`;
+                function harold(standIn) {
+                    if (standIn < 10) { standIn = '0' + standIn; }
+                    return standIn;
+                }
+            }
+            setInterval(clock, 1000);
+        }
+       
+    });
+   
+
+function harita() {
+
+    Map = new ol.Map({
+        //View, Layers ve Target bu 3ü  zorunlu elemanlardır.
+        view: new ol.View({// görüntümüzü ayarlayacağımız bölümdür.
+            center: [3646164.0984667353, 4847765.351090939], //
+            zoom: 9.769803598351844,
+            maxZoom: 100,
+            minZoom: 2,
+        }),
+        layers: [ //katman ve altyapı seçeceğimiz bölümdür
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            }),
+            vectorLayer
+        ],
+        target: 'js-map' //html'de nereye gideceğimizi belirler
+    })
+
+    const draw = new ol.interaction.Draw({
+        source: vectorSource,
+        type: "Point"
+    })
+
+    Map.addInteraction(draw);
+
+    draw.setActive(false);
+
+    draw.on("drawend", (event) => {
+
+        //alert(event.feature.getGeometry().getCoordinates());
+        coordinates = event.feature.getGeometry().getCoordinates();
+
+        panelOlustur(coordinates);
+
+    })
+    var btn = document.getElementById("button");
+
+    btn.onclick = function () {
+        draw.setActive(true);
+    }
+
+
+}

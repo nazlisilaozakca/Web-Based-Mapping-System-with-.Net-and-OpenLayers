@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLayers Web Map</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./v6.15.1-dist/ol.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/jspanel.css" rel="stylesheet">
+
+</head>
+<body>
+
+        <div class="topnav">
+            <input type="button" name="button" id="button" value="Nokta Ekle" >
+        </div>
+        <div id="js-map" class="map"></div>
+
+        <!-- jsPanel JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/jspanel.js"></script>
+
+        <!-- optional jsPanel extensions -->
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/modal/jspanel.modal.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/tooltip/jspanel.tooltip.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/hint/jspanel.hint.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/layout/jspanel.layout.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/contextmenu/jspanel.contextmenu.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.15.0/dist/extensions/dock/jspanel.dock.js"></script>
+        
+        <script src="./v6.15.1-dist/ol.js"></script>
+        <script src="./main.js"></script>
+</body>
+</html>
